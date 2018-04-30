@@ -1,6 +1,10 @@
 # krbauth.py
 Python wrapper module around `kinit` for simple Kerberos authentication.
 
+## Pre-requisites
+
+You must have your machine configured as a _Kerberos_ user. For debian based machines such as Ubuntu, this would involve installing the `krb5-user` package, and configuring the `krb5.conf` file.
+
 ## Usage
 
 It can be run as a script from the command-line. The usage help is shown below.
@@ -21,7 +25,7 @@ optional arguments:
 
 You can also import and use the `krbauth` function directly in your Python program like the following. It returns a boolean value, signifying whether the login was successful or not.
 ```python
-from krbauth import krbauth
-
-res = krbauth(username, password)
+>>> import krbauth
+>>> krbauth.krbauth('username', 'password')
+True
 ```
